@@ -1,8 +1,6 @@
 
 let dieRolls = []
-
-
-
+let dieTotal = document.querySelector("#total")
 
 
 // **** Roll Button ****
@@ -23,24 +21,34 @@ rollButtonClick.addEventListener("click", function () {
 
     // })**** Dice Loop ****
 
-
-    
+ let sum = 0
 
      for (let i = 1; i <= diceNumber; i++) {
 
-         dieRolls.push(Math.ceil(Math.random() * 6))
+       dieRolls.push(Math.ceil(Math.random() * 6))
+
     }
-console.log(dieRolls)
 
 
 // **** Total ****
 
+    console.log(dieRolls)
 
+    dieRolls.forEach(item => {
+        sum = item + sum
+    })
 
+    dieTotal.innerHTML = sum
 
 })
-// Sum all your dice rolls and display the result in the Total area on the page using innerHTML
-
+// work on the "Show all results" button
 
  
 
+// const array = [1, 2, 3, 4];
+// let sum = 0;
+
+// for (let i = 0; i < array.length; i++) {
+//     sum += array[i];
+// }
+// console.log(sum);
