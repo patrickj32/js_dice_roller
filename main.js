@@ -1,13 +1,14 @@
 
 let dieRolls = []
 let dieTotal = document.querySelector("#total")
-
+let showAllRolesButtonClick = document.querySelector("#allRollsButton")
+let showAllRolesButtonTotal = document.querySelector("#allRollsTotal")
 
 // **** Roll Button ****
 
 
 let rollButtonClick = document.getElementById("rollButton")
-// let diceNumber = document.getElementById("numOfDice")
+let diceNumber = document.getElementById("numOfDice")
 
 
 rollButtonClick.addEventListener("click", function () {
@@ -41,14 +42,49 @@ rollButtonClick.addEventListener("click", function () {
     dieTotal.innerHTML = sum
 
 })
-// work on the "Show all results" button
+
+// ****** "Show All Rolls button" ******
+
+showAllRolesButtonClick.addEventListener("click", function() {
+ 
+    
+// *** all roles loop ***
+    // for (var i = 0; i < dieRolls; i++) {
+
+    // }
+    
+     // *** Testing ****
+
+
+
+
+// Show All Roles list
+    let allRolesList = document.querySelector("#showAllRolesList")
+
+    dieRolls.forEach(function(i){
+        let li = document.createElement('li')
+        li.innerText = i
+        // allRolesList.innerHTML = li
+        allRolesList.append(li)
+        // console.log(allRolesList.innerHTML = li)    
+
+    })
+
+console.log("All roles have been clicked")
+
+})
+
+//     Write a new loop: Loop over the dieRolls  array, creating a new List Item for each number and adding that List Item to the
+// innerHTML  of the "All Rolls" element. 
+
+// This LI should show the value of the roll. (4 points-- >
 
  
 
-// const array = [1, 2, 3, 4];
-// let sum = 0;
+// Notes
 
-// for (let i = 0; i < array.length; i++) {
-//     sum += array[i];
-// }
-// console.log(sum);
+// the rolls needs to start over each time
+
+// The array needs to be reset for New dice roll
+
+// referenece the DOM review 
