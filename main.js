@@ -3,6 +3,7 @@ let dieRolls = []
 let dieTotal = document.querySelector("#total")
 let showAllRolesButtonClick = document.querySelector("#allRollsButton")
 let showAllRolesButtonTotal = document.querySelector("#allRollsTotal")
+let allRolesList = document.querySelector("#showAllRolesList")
 
 // **** Roll Button ****
 
@@ -13,14 +14,11 @@ let diceNumber = document.getElementById("numOfDice")
 
 rollButtonClick.addEventListener("click", function () {
 
-    // **** Test ****
-    // this.innerHTML="ahhh"
-    // ********
     // document.getElementById("numOfDice")
     let diceNumber = document.getElementById("numOfDice").value
     console.log("The number of rolls is " + diceNumber)
 
-    // })**** Dice Loop ****
+    //  Dice Loop 
 
  let sum = 0
 
@@ -59,7 +57,6 @@ showAllRolesButtonClick.addEventListener("click", function() {
 
 
 // Show All Roles list
-    let allRolesList = document.querySelector("#showAllRolesList")
 
     dieRolls.forEach(function(i){
         let li = document.createElement('li')
@@ -70,14 +67,26 @@ showAllRolesButtonClick.addEventListener("click", function() {
 
     })
 
-console.log("All roles have been clicked")
+    
+})
+
+
+let rollReset= document.getElementById("reset")
+
+rollReset.addEventListener("click", function () {
+    
+    console.log("reset button clicked")
+
+   diceNumber.value = 0
+   dieTotal.innerHTML = 0
+   dieRolls = [] 
+   allRolesList.innerHTML= ""
+
 
 })
 
-//     Write a new loop: Loop over the dieRolls  array, creating a new List Item for each number and adding that List Item to the
-// innerHTML  of the "All Rolls" element. 
 
-// This LI should show the value of the roll. (4 points-- >
+
 
  
 
